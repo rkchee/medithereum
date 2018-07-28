@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>Star</title>
+    <meta name="description" content="my-polymer2-app description">
+
+    <!-- See https://goo.gl/OOhYW5 -->
+    <link rel="manifest" href="/manifest.json">
+
+    <script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="/bower_components/yjs/y.js"></script>
+    <script src="/bower_components/y-text/y-text.js"></script>
+    <script src="/bower_components/y-memory/y-memory.js"></script>
+    <script src="/bower_components/y-array/y-array.js"></script>
+    <script src="/bower_components/y-webrtc/y-webrtc.js"></script>
+
+    <link rel="import" href="/src/my-emr-element/my-emr-element.html">
+    <link rel="import" href="/bower_components/simple-timer/simple-timer.html">
+
+  </head>
+  <body onload="startTimer()">
+    <my-emr-element></my-emr-element>
+    <style type="text/css">
+      .timer{
+        text-align: center;
+        font-size: 5;
+      }
+    </style>
+    <h2 class="timer"> Stellar (XLM): 
+      <simple-timer class="timer" id="timer" count-up=True start-time="10000000"></simple-timer>
+    </h2>
+    <script type="text/javascript">
+        function startTimer(){
+          timer.start();
+        }
+    </script>
+    <script type="text/javascript">
+      Y({db:{name:"memory"},connector:{name:"webrtc",room:"my-room"},share:{textarea:"Text"}}).then(function(y){y.share.textarea.bind(document.querySelector("textarea"))});
+    </script>
+    <style type="text/css">
+      .myclass{text-align:left;color:#000066;display:block;margin-left:auto;margin-right:auto;}
+    </style>
+    <textarea class="myclass" autofocus="" rows="10" cols="100"></textarea>
+  </body>
+</html>

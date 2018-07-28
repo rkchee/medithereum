@@ -1,0 +1,6 @@
+{
+  "name": "my-polymer2-app",
+  "short_name": "my-polymer2-app",
+  "start_url": "/",
+  "display": "standalone"
+}
